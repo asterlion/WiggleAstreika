@@ -6,6 +6,7 @@ import com.stv.factory.factorytests.BasicFactoryTest;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import java.util.concurrent.TimeUnit;
 import static com.stv.framework.core.lib.WigglePageURLs.START_URL;
@@ -20,6 +21,7 @@ public class MainSteps extends BasicFactoryTest {
         driver.get(START_URL);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        getDriver().findElement(By.xpath("/html/body/div[3]/div/div[2]/div[1]/div/div[2]/button[2]")).click();
     }
 
     @Then("Wiggle Logo is displayed")
