@@ -4,7 +4,7 @@ Feature: Search checking
     Given Home page is loaded
     And Search bar is visible on display
     When The User enters "<req>" in the searchbar
-    Then Search page is displayed
+    Then Search panel is appear
 
     Examples:
       | req     |

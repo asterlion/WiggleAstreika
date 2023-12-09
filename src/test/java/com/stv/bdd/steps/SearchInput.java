@@ -44,7 +44,7 @@ public class SearchInput {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
-    @Then("Search page is displayed")
+    @Then("Search panel is appear")
     public void searchPanelIsDisplayed() {mainFactoryPage.isSearchPanelDisplayed();}
 
 

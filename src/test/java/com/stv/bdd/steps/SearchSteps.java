@@ -46,10 +46,7 @@ public class SearchSteps {
 
 
     @Then("Dropdown menu appears")
-    public void dropDownMenuAppears(String string) {
-        mainPage.isDropDownMenuAppears();
-    }
-
+    public void searchPanelIsDisplayed() {mainFactoryPage.isSearchPanelDisplayed();}
 
     @When("The User clears search bar")
     public void clearSearchBar() {
