@@ -13,8 +13,14 @@ public class MainFactoryPage extends FactoryPage {
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div/div/form/input")
     private WebElement searchBar;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div[2]")
+    private WebElement searchPanel;
+
     public boolean isAccountLinkDisplayed(){
         return accountLink.isDisplayed();
+    }
+    public boolean isSearchPanelDisplayed(){
+        return searchPanel.isDisplayed();
     }
 
     public void clickOnAccountLink(){

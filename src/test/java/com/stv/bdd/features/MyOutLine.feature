@@ -1,6 +1,6 @@
 Feature: Search checking
 
-  Scenario Outline: 01. Check search input and dropdown
+  Scenario Outline: Check search input and dropdown
     Given Homepage is loaded
     And Search bar is visible
     When The User enters "<request>" in the search bar

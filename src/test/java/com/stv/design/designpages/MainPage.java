@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.stv.framework.core.drivers.Driver.driver;
+
 public class MainPage extends Page {
 
     private final By REGISTER_LINK_LOCATOR = By.xpath("//img[contains(@alt,'Wiggle')]");
@@ -65,10 +67,14 @@ public class MainPage extends Page {
         boolean textPresent = Driver.getDriver().getTitle().contains("Search product or brand");
         return textPresent;
     }
+    public boolean isSearchPageIsDisplayed() {
+        boolean textPresent = Driver.getDriver().getTitle().contains("You searched");
+        return textPresent;
+    }
 
     public void searchRequestInput(String string) {
-        CharSequence req = string;
-        input.sendKeys(req);
+        WebElement myElement = driver.findElement(By.xpath("/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div/div/form/input"));
+        myElement.sendKeys(string);
     }
 
     public void clickOnBasketButton() {
