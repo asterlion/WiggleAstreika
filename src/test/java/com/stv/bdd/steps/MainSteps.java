@@ -21,7 +21,8 @@ public class MainSteps extends BasicFactoryTest {
         driver.get(START_URL);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div[1]/div/div[2]/button[2]")).click();
+        //driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div[1]/div/div[2]/button[2]")).click();
+        mainFactoryPage.clickOnTrustButton();
     }
 
     @Then("Wiggle Logo is displayed")

@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,13 +20,14 @@ public class SearchSteps {
     MainPage mainPage = new MainPage();
     MainFactoryPage mainFactoryPage = new MainFactoryPage();
 
-    @Given("Home page is loaded")
+    @Given("Homepage is loaded")
     public void homePageIsLoaded() {
         WebDriver driver = getDriver();
         driver.get(START_URL);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        getDriver().findElement(By.xpath("/html/body/div[3]/div/div[2]/div[1]/div/div[2]/button[2]")).click();
+        mainFactoryPage.clickOnTrustButton();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
     @And("Search bar is visible")
@@ -33,9 +35,38 @@ public class SearchSteps {
         mainPage.isSearchBarIsVisible();
     }
 
-    @When("The User enters <req> in the search bar")
-    public void enterSearchRequest(String string)  {
+    @When("^The User enters \"([^\"]*)\" in the search bar$")
+    public void enterSearchRequest(String string) {
+        mainFactoryPage.clickOnSearchBar();
         mainPage.searchRequestInput(string);
+        getDriver().manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        throw new io.cucumber.java.PendingException();
     }
+
+
+    @Then("Dropdown menu appears")
+    public void dropDownMenuAppears(String string) {
+        mainPage.isDropDownMenuAppears();
+    }
+
+
+    @When("The User clears search bar")
+    public void clearSearchBar() {
+        mainPage.deleteRequest();
+        getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+
+
+    @Then("Dropdown menu is hidden")
+    public void dropdownDisappears() {
+        Assert.assertEquals(mainPage.isDropdownHidden(), false);
+    }
+
+
+    @And("Search bar is empty")
+    public void searchBarIsEmpty() {
+        Assert.assertEquals(mainPage.isInputEmpty(), true);
+    }
+
 
 }

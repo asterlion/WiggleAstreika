@@ -14,52 +14,97 @@ public class MainPage extends Page {
     private final By SALE_BUTTON = By.xpath("/html/body/div[1]/div/div[2]/div/div/div/div[2]/div/div/a/span/span");
     private final By WINTER_SALE = By.linkText("https://www.wiggle.com/m/sale");
 
+    @FindBy(id = "search-type-ahead")
+    private WebElement dropdown;
 
     @FindBy(id = "rs")
     private WebElement input;
 
-    public boolean isMainLogoDisplayed(){
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div/div/form/label")
+    private WebElement searchBar;
+
+    public boolean isMainLogoDisplayed() {
         WebElement registerLink = getDriver().findElement(REGISTER_LINK_LOCATOR);
         return registerLink.isDisplayed();
     }
 
-    public void clickOnTrustButton(){
+    public void clickOnTrustButton() {
         WebElement trustButton = getDriver().findElement(TRUST_BUTTON);
         trustButton.click();
     }
 
-    public boolean isSearchBarIsVisible(){
-        WebElement registerLink = getDriver().findElement(By.xpath("/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div/div/form/input"));
+/*    public boolean isSearchBarIsVisible() {
+        WebElement registerLink = getDriver().findElement(By.xpath("/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div/div/form/button/svg"));
         return registerLink.isDisplayed();
+    }*/
+
+/*
+    public boolean isSearchBarIsVisible(){ return searchBar.isDisplayed(); }
+*/
+
+    public boolean isDropDownMenuAppears() {
+        WebElement registerElement = getDriver().findElement(By.xpath("/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div[2]/div"));
+        return registerElement.isDisplayed();
     }
 
-    public boolean isBasketPageIsOpened(){
+    public boolean isBasketPageIsOpened() {
         boolean textPresent = Driver.getDriver().getPageSource().contains("YOUR SHOPPING BASKET IS EMPTY");
         return textPresent;
     }
-    public boolean isShopPageIsOpened(){
+
+    public boolean isShopPageIsOpened() {
         boolean textPresent = Driver.getDriver().getPageSource().contains("EPIC WINTER SALE");
         return textPresent;
     }
-    public boolean isSalePageIsOpened(){
+
+    public boolean isSalePageIsOpened() {
         boolean textPresent = Driver.getDriver().getTitle().contains("WINTER_SALE");
         return textPresent;
     }
-    public void searchRequestInput(String string) { input.sendKeys(string); }
+    public boolean isSearchBarIsVisible() {
+        boolean textPresent = Driver.getDriver().getTitle().contains("Search product or brand");
+        return textPresent;
+    }
 
-    public void clickOnBasketButton(){
+    public void searchRequestInput(String string) {
+        CharSequence req = string;
+        input.sendKeys(req);
+    }
+
+    public void clickOnBasketButton() {
         WebElement basketButton = getDriver().findElement(BASKET_BUTTON);
         basketButton.click();
     }
-    public void clickOnShopNow(){
+
+    public void clickOnShopNow() {
         WebElement shopNowButton = getDriver().findElement(SHOPNOW_BUTTON);
         shopNowButton.click();
     }
-    public void clickOnSalePage(){
+
+    public void clickOnSalePage() {
         WebElement salePageButton = getDriver().findElement(SALE_BUTTON);
         salePageButton.click();
     }
 
+    public void deleteRequest() {
+        input.clear();
+    }
+
+    public boolean isDropdownHidden() {
+        if (dropdown.isDisplayed()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean isInputEmpty(){
+        if (input.getAttribute("value").isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 
 }

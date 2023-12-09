@@ -1,9 +1,9 @@
 Feature: Search checking
 
-  Scenario Outline: Check search input and dropdown
-    Given Home page is loaded
+  Scenario Outline: 01. Check search input and dropdown
+    Given Homepage is loaded
     And Search bar is visible
-    When The User enters "<req>" in the search bar
+    When The User enters "<request>" in the search bar
     Then Dropdown menu appears
 #  And Dropdown menu contains Run
     When The User clears search bar
@@ -11,6 +11,6 @@ Feature: Search checking
     And Search bar is empty
 
     Examples:
-      | req     |
+      | request |
       | run     |
       | gym     |

@@ -41,7 +41,7 @@ public class MainFactoryTest extends BasicFactoryTest {
 
     }
 
-    @Test (description = "Login with valid data", dependsOnMethods = "assertValidationWithNotSignedUpUser")
+    @Test (description = "Login with valid value", dependsOnMethods = "assertValidationWithNotSignedUpUser")
     public void assertUserLoggedIn() {
         loginPage.getUsername().clear();
         loginPage.inputText(loginPage.getUsername(), USERNAME);

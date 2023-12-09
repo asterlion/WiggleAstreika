@@ -10,6 +10,8 @@ public class MainFactoryPage extends FactoryPage {
 
     @FindBy(xpath = "//button[contains(text(),'Accept all')]")
     private WebElement trustButton;
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div/div/form/input")
+    private WebElement searchBar;
 
     public boolean isAccountLinkDisplayed(){
         return accountLink.isDisplayed();
@@ -21,5 +23,8 @@ public class MainFactoryPage extends FactoryPage {
 
     public void clickOnTrustButton(){
         trustButton.click();
+    }
+    public void clickOnSearchBar(){
+        searchBar.click();
     }
 }
