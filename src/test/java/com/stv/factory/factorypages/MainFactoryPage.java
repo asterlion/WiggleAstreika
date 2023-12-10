@@ -10,10 +10,10 @@ public class MainFactoryPage extends FactoryPage {
 
     @FindBy(xpath = "//button[contains(text(),'Accept all')]")
     private WebElement trustButton;
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div/div/form/input")
+    @FindBy(xpath = "//*[@id=\"autocomplete-1-input\"]")
     private WebElement searchBar;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[2]/div[2]")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[1]/header/div[2]/div/div/div[2]/div[2]/div")
     private WebElement searchPanel;
 
     public boolean isAccountLinkDisplayed(){
