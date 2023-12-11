@@ -13,7 +13,8 @@ public class MainFactoryPage extends FactoryPage {
     @FindBy(xpath = "//*[@id=\"autocomplete-1-input\"]")
     private WebElement searchBar;
 
-    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[1]/header/div[2]/div/div/div[2]/div[2]/div")
+   // @FindBy(xpath = "//*[@id=\"__next\"]/div/div[1]/header/div[2]/div/div/div[2]/div[2]/div")
+    @FindBy(className = "Autocomplete_panel__Ze8gZ")
     private WebElement searchPanel;
 
     public boolean isAccountLinkDisplayed(){
