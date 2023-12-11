@@ -28,7 +28,7 @@ public class SearchSteps {
         driver.get(START_URL);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        mainFactoryPage.clickOnTrustButton();
+        //mainFactoryPage.clickOnTrustButton();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
@@ -50,14 +50,14 @@ public class SearchSteps {
 
     @When("The User clears search bar")
     public void clearSearchBar() {
-        mainPage.deleteRequest();
+        mainFactoryPage.deleteRequest();
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
 
     @Then("Dropdown menu is hidden")
     public void dropdownDisappears() {
-        Assert.assertEquals(mainPage.isDropdownHidden(), false);
+        Assert.assertEquals(mainFactoryPage.isDropdownHidden(), false);
     }
 
 
