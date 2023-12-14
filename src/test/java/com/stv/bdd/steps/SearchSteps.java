@@ -28,7 +28,7 @@ public class SearchSteps {
         driver.get(START_URL);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        //mainFactoryPage.clickOnTrustButton();
+        mainFactoryPage.clickOnTrustButton();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 

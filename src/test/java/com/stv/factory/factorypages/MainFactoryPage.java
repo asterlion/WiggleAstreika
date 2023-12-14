@@ -46,8 +46,11 @@ public class MainFactoryPage extends FactoryPage {
         accountLink.click();
     }
 
-    public void clickOnTrustButton(){
-        trustButton.click();
+    public void clickOnTrustButton() {
+        try {
+            trustButton.click();
+        } catch (Exception e) {
+        }
     }
     public void clickOnSearchBar(){
         searchBar.click();

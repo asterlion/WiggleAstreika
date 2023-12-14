@@ -38,6 +38,8 @@ public class LoginPage extends FactoryPage {
 
     @FindBy(xpath = "//span[@id='error-element-password']")
     private WebElement loginValidationMessage;
+    @FindBy(xpath = "//a[@class='c11ad22cc c58f27bb1 c1ec6096e']")
+    private WebElement forgotPasswordButton;
 
     public boolean isLoginContainerDisplayed(){
         return loginContainer.isDisplayed();
@@ -53,10 +55,9 @@ public class LoginPage extends FactoryPage {
     public String loginValidationMessage(){
         return loginValidationMessage.getText();
     }
-    public void clickContinueButton(){
-        continueButton.click();
-    }
-public void isValidationMessagePresentOnInvalidCredentials(){
+    public void clickContinueButton(){continueButton.click();}
+    public void clickOnForgotPassword(){forgotPasswordButton.click();}
+    public void isValidationMessagePresentOnInvalidCredentials(){
 
 }
     public boolean isMyAccountButtonPresent(){

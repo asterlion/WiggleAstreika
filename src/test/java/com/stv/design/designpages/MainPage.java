@@ -10,6 +10,7 @@ import static com.stv.framework.core.drivers.Driver.driver;
 public class MainPage extends Page {
 
     private final By REGISTER_LINK_LOCATOR = By.xpath("//img[contains(@alt,'Wiggle')]");
+    private final By SIGNIN_BUTTON = By.xpath("//span[@class='MyAccountToggle_linkText__izUQJ MyAccountToggle_linkTextDesktopOnly__spsqM']");
     private final By TRUST_BUTTON = By.xpath("//button[contains(text(),'Accept all')]");
     private final By BASKET_BUTTON = By.xpath("/html/body/div[1]/div/div[1]/header/div[2]/div/div/div[1]/a");
     private final By SHOPNOW_BUTTON = By.xpath("/html/body/div[1]/div/div[2]/div/div/div[2]/div/a/span/span");
@@ -90,6 +91,10 @@ public class MainPage extends Page {
     public void clickOnSalePage() {
         WebElement salePageButton = getDriver().findElement(SALE_BUTTON);
         salePageButton.click();
+    }
+    public void clickOnSignInButton() {
+        WebElement signInButton = getDriver().findElement(SIGNIN_BUTTON);
+        signInButton.click();
     }
 
     public void deleteRequest() {

@@ -26,9 +26,7 @@ public class SearchInput {
         driver.get(START_URL);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-/*
         mainFactoryPage.clickOnTrustButton();
-*/
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 
