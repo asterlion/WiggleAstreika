@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="wiggrPr" />
         <module name="wigglePrForStudents" />
+        <module name="DiplomAstreikaTests" />
       </profile>
     </annotationProcessing>
   </component>

@@ -4,7 +4,7 @@
     <test name="Factory tests">
         <parameter name="browser" value="chrome" />
         <classes>
-            <class name="com.stv.factory.factorytests.MainFactoryTest">
+            <class name="com.core.factory.factorytests.MainFactoryTest">
                 <methods>
                     <include name="assertAccountIconIsDisplayed"/>
                     <include name="assertLoginPageOpened"/>
